@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  firefox:
+    image: selenium/standalone-firefox:122.0-geckodriver-0.34.0-grid-4.17.0-20240123
+    shm_size: 2gb
+    ports:
+      - "4444:4444" # Grid
+      - "7900:7900" # Node
+    networks:
+      - selenium-grid
+
+networks:
+  selenium-grid:
+    name: selenium-grid
+    driver: bridge

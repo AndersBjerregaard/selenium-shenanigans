@@ -1,0 +1,9 @@
+.dockerignore
+.idea/
+bin/
+obj/
+standalone-execution/
+.gitignore
+LICENSE
+README.md
+docker-compose.yaml
