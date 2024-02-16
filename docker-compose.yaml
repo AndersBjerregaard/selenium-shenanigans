@@ -5,4 +5,11 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-    network_mode: host
+#    network_mode: host
+    networks:
+      - selenium-grid
+
+networks:
+  selenium-grid:
+    name: selenium-grid
+    driver: bridge

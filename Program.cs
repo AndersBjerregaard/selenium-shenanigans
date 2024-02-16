@@ -6,7 +6,7 @@ Console.WriteLine("Starting WebDriver...");
 
 var options = new FirefoxOptions();
 
-var uri = new System.Uri("http://localhost:4444");
+var uri = new System.Uri("http://selenium-hub:4444");
 
 var driver = new RemoteWebDriver(uri, options);
 
