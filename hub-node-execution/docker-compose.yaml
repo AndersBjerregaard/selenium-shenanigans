@@ -68,6 +68,7 @@ services:
     build:
       context: ../
       dockerfile: .dockerfile
+    container_name: 'test-scripts'
     environment:
       - GRID_URI=selenium-hub
     links:

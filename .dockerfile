@@ -1,5 +1,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0
 
+RUN apt update
+
+RUN apt install jq -y
+
 RUN mkdir /App
 
 WORKDIR /App
@@ -14,4 +18,4 @@ RUN dotnet build ./selenium-shenanigans-tests/selenium-shenanigans-tests.csproj
 
 # RUN dotnet test ./selenium-shenanigans-tests/selenium-shenanigans-tests.csproj
 
-ENTRYPOINT ["dotnet", "test", "/App/selenium-shenanigans-tests/selenium-shenanigans-tests.csproj"]
+ENTRYPOINT ["/App/wait-for-grid.sh", "dotnet", "test", "/App/selenium-shenanigans-tests/selenium-shenanigans-tests.csproj"]
