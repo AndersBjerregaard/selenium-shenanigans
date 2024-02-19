@@ -155,7 +155,7 @@ public class WebDriverFixture : IDisposable
         else
         {
             Debug.WriteLine($"Environment variable 'GRID_URI' loaded as: {env}");
-            WebDriverUri = new Uri(env);
+            WebDriverUri = new Uri($"http://{env}:4444");
         }
     }
 
