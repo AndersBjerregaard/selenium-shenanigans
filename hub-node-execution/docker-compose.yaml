@@ -5,7 +5,7 @@ services:
     image: selenium/hub:4.17.0-20240123
     container_name: 'selenium-hub'
     volumes:
-      - ./config.toml:/opt/bin/config.toml
+      - ./hub-config/config.toml:/opt/bin/config.toml
     ports:
       - "4442:4442"
       - "4443:4443"
@@ -17,6 +17,8 @@ services:
     image: selenium/node-firefox:122.0-geckodriver-0.34.0-grid-4.17.0-20240123
     container_name: 'firefox'
     shm_size: 2gb
+    volumes:
+      - ./node-config/config.toml:/opt/bin/config.toml
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -30,6 +32,8 @@ services:
     image: selenium/node-edge:120.0-edgedriver-120.0-grid-4.17.0-20240123
     container_name: 'edge'
     shm_size: 2gb
+    volumes:
+      - ./node-config/config.toml:/opt/bin/config.toml
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -43,6 +47,8 @@ services:
     image: selenium/node-chrome:120.0-chromedriver-120.0-grid-4.17.0-20240123
     container_name: 'chrome'
     shm_size: 2gb
+    volumes:
+      - ./node-config/config.toml:/opt/bin/config.toml
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442

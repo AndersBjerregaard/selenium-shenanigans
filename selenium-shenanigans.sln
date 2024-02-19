@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selenium-shenanigans-tests", "selenium-shenanigans-tests\selenium-shenanigans-tests.csproj", "{D72F723A-119F-494D-B6A9-6280F370918B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selenium-shenanigans", "selenium-shenanigans\selenium-shenanigans.csproj", "{0178C193-218A-44C3-9D87-B9445FDB76E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selenium-shenanigans-classlib", "selenium-shenanigans-classlib\selenium-shenanigans-classlib.csproj", "{5672CF05-2706-4BDD-9716-7455B93D8352}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D72F723A-119F-494D-B6A9-6280F370918B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D72F723A-119F-494D-B6A9-6280F370918B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D72F723A-119F-494D-B6A9-6280F370918B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0178C193-218A-44C3-9D87-B9445FDB76E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0178C193-218A-44C3-9D87-B9445FDB76E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0178C193-218A-44C3-9D87-B9445FDB76E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0178C193-218A-44C3-9D87-B9445FDB76E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5672CF05-2706-4BDD-9716-7455B93D8352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5672CF05-2706-4BDD-9716-7455B93D8352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5672CF05-2706-4BDD-9716-7455B93D8352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5672CF05-2706-4BDD-9716-7455B93D8352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
