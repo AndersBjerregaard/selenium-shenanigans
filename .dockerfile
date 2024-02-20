@@ -10,6 +10,8 @@ WORKDIR /App
 
 COPY . ./
 
+RUN chmod +x wait-for-grid.sh entrypoint.sh
+
 RUN dotnet restore --verbosity detailed ./selenium-shenanigans-tests/selenium-shenanigans-tests.csproj
 
 RUN dotnet build ./selenium-shenanigans-tests/selenium-shenanigans-tests.csproj
@@ -18,4 +20,6 @@ RUN dotnet build ./selenium-shenanigans-tests/selenium-shenanigans-tests.csproj
 
 # RUN dotnet test ./selenium-shenanigans-tests/selenium-shenanigans-tests.csproj
 
-ENTRYPOINT ["dotnet", "test", "/App/selenium-shenanigans-tests/selenium-shenanigans-tests.csproj"]
+#ENTRYPOINT ["dotnet", "test", "/App/selenium-shenanigans-tests/selenium-shenanigans-tests.csproj"]
+
+ENTRYPOINT ["/App/entrypoint.sh"]

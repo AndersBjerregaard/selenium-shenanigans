@@ -1,0 +1,1 @@
+docker run --rm -ti --name test-scripts --network selenium-grid -e GRID_URI=selenium-hub hub-node-execution-test-scripts

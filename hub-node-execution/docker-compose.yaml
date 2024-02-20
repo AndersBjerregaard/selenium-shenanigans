@@ -6,6 +6,13 @@ services:
     container_name: 'selenium-hub'
     volumes:
       - ./hub-config/config.toml:/opt/bin/config.toml
+    environment:
+      - host:0.0.0.0
+    healthcheck:
+      test: ["CMD", "/opt/bin/check-grid.sh"]
+      interval: 15s
+      timeout: 30s
+      retries: 5
     ports:
       - "4442:4442"
       - "4443:4443"
@@ -23,12 +30,6 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - host=0.0.0.0
-    healthcheck:
-      test: ["CMD", "/opt/bin/check-grid.sh"]
-      interval: 15s
-      timeout: 30s
-      retries: 5
     networks:
       - selenium-grid
     depends_on:

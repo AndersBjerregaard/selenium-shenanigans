@@ -42,9 +42,7 @@ public class WebDriverTests : IClassFixture<WebDriverFixture>
             var textBox = wait.Until(webDriver =>
             {
                 var e = webDriver.FindElement(By.Name("my-text"));
-                if (e.Displayed)
-                    return e;
-                return null;
+                return e.Displayed ? e : null;
             });
             
             var submitButton = driver.FindElement(By.TagName("button"));
@@ -63,8 +61,7 @@ public class WebDriverTests : IClassFixture<WebDriverFixture>
         }
         finally
         {
-            if (driver is not null)
-                driver.Quit();
+            driver?.Quit();
         }
     }
 
