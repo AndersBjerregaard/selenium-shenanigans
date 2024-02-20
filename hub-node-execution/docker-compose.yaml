@@ -69,6 +69,11 @@ services:
       context: ../
       dockerfile: .dockerfile
     container_name: 'test-scripts'
+    healthcheck:
+      test: ["CMD-SHELL", "/App/wait-for-grid.sh"]
+      start_period: 10s
+      timeout: 1m
+      retries: 3
     environment:
       - GRID_URI=selenium-hub
     links:

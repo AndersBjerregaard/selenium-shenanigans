@@ -12,7 +12,7 @@ while [ $SECONDS -lt $end_time ]; do
     response=$(curl -sL "$url" | jq -r '.value.ready')
     if [ -n "$response"  ]  && [ "$response" ]; then
         echo "Selenium Grid is up - executing tests"
-        break
+        exit 0
     else
         echo "Waiting for the Grid. Sleeping for $wait_interval_in_seconds second(s). $time_left seconds left until timeout."
         sleep $wait_interval_in_seconds

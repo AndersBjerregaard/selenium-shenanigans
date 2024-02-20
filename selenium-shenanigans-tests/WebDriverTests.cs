@@ -12,12 +12,12 @@ namespace selenium_shenanigans_tests;
 
 public class WebDriverTests : IClassFixture<WebDriverFixture>
 {
-    private WebDriverFixture fixture;
+    private readonly WebDriverFixture _fixture;
     private readonly ITestOutputHelper _testOutputHelper;
 
     public WebDriverTests(WebDriverFixture fixture, ITestOutputHelper testOutputHelper)
     {
-        this.fixture = fixture;
+        _fixture = fixture;
         _testOutputHelper = testOutputHelper;
     }
     
@@ -28,7 +28,7 @@ public class WebDriverTests : IClassFixture<WebDriverFixture>
         RemoteWebDriver? driver = null;
         try
         {
-            var uri = fixture.WebDriverUri;
+            var uri = _fixture.WebDriverUri;
 
             driver = new RemoteWebDriver(uri, driverOptions);
 
@@ -86,7 +86,7 @@ public class WebDriverTests : IClassFixture<WebDriverFixture>
         RemoteWebDriver? driver = null;
         try
         {
-            var uri = fixture.WebDriverUri;
+            var uri = _fixture.WebDriverUri;
 
             driver = new RemoteWebDriver(uri, driverOptions);
 
@@ -100,9 +100,7 @@ public class WebDriverTests : IClassFixture<WebDriverFixture>
             var textBox = wait.Until(webDriver =>
             {
                 var e = webDriver.FindElement(By.Name("my-text"));
-                if (e.Displayed)
-                    return e;
-                return null;
+                return e.Displayed ? e : null;
             });
             
             var submitButton = driver.FindElement(By.TagName("button"));
@@ -150,7 +148,7 @@ public class WebDriverFixture : IDisposable
         {
             Debug.WriteLine("Environment variable 'GRID_URI' was unset." +
                               " Defaulting Selenium Gird Hub uri to localhost...");
-            WebDriverUri = new Uri("http://localhost:4444");
+            WebDriverUri = new Uri(@"http://localhost:4444");
         }
         else
         {
