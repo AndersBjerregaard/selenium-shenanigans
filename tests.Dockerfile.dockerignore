@@ -9,3 +9,7 @@ README.md
 docker-compose.yaml
 selenium-shenanigans.sln.DotSettings.user
 hub-node-execution/
+new-local-image.ps1
+run.ps1
+dynamic-grid/
+fully-distributed/

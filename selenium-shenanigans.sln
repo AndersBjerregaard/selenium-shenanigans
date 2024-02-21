@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selenium-shenanigans-tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selenium-shenanigans-classlib", "selenium-shenanigans-classlib\selenium-shenanigans-classlib.csproj", "{5672CF05-2706-4BDD-9716-7455B93D8352}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fully-distributed", "fully-distributed", "{52C34348-89BE-42CC-80D7-1FFB566FFBE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "se-fd-tests", "fully-distributed\se-fd-tests\se-fd-tests.csproj", "{1ABF2228-0EA2-4BFB-9DFE-6E0E304ADDCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +25,18 @@ Global
 		{5672CF05-2706-4BDD-9716-7455B93D8352}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5672CF05-2706-4BDD-9716-7455B93D8352}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5672CF05-2706-4BDD-9716-7455B93D8352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ABF2228-0EA2-4BFB-9DFE-6E0E304ADDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ABF2228-0EA2-4BFB-9DFE-6E0E304ADDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ABF2228-0EA2-4BFB-9DFE-6E0E304ADDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ABF2228-0EA2-4BFB-9DFE-6E0E304ADDCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D76F8A94-2234-418B-A0F8-75607E9D7CCB}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1ABF2228-0EA2-4BFB-9DFE-6E0E304ADDCB} = {52C34348-89BE-42CC-80D7-1FFB566FFBE2}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,15 @@
+[events]
+publish = "tcp://selenium-hub:4442"
+subscribe = "tcp://selenium-hub:4443"
+
+[node]
+session-timeout = "300"
+override-max-sessions = false
+detect-drivers = false
+drain-after-session-count = 0
+max-sessions = 1
+
+[[node.driver-configuration]]
+display-name = "firefox"
+stereotype = '{"browserName": "firefox", "browserVersion": "122.0", "platformName": "Linux", "moz:firefoxOptions": {"binary": "/usr/bin/firefox"}}'
+max-sessions = 1
